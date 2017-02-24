@@ -1,0 +1,50 @@
+---
+booktitle: Proceedings of the 1st Machine Learning for Healthcare Conference
+volume: 56
+year: '2016'
+start: 2016-08-18
+end: 2016-08-19
+published: 2016-12-10
+shortname: MLHC
+layout: proceedings
+series: Proceedings of Machine Learning Research
+id: MLHC-2016
+month: 0
+abstract: ''
+sections: 
+editor:
+- given: Finale
+  family: Doshi-Velez
+- given: Jim
+  family: Fackler
+- given: David
+  family: Kale
+- given: Byron
+  family: Wallace
+- given: Jenna
+  family: Weins
+title: Proceedings of the 1st Machine Learning for Healthcare Conference
+email: ''
+description: Proceedings of the 1st Machine Learning for Healthcare Conference, Northeastern
+  University, Boston, MA, USA
+url: http://proceedings.mlr.press
+baseurl: "/v56"
+twitter_username: mlresearch
+github_username: mlresearch
+markdown: kramdown
+permalink: "/:title.html"
+github:
+  edit: true
+  repository: v56
+conference:
+  name: Machine Learning for Healthcare Conference
+  url: http://mucmd.org/conference-2016.html
+  location: Northeastern University, Boston, MA, USA
+  dates:
+  - 2016-08-18
+  - 2016-08-19
+analytics:
+  google:
+    tracking_id: UA-92432422-1
+# Site settings
+# Auto generated from v56.bib

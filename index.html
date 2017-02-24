@@ -1,542 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>MLHC 2016 | JMLR W&amp;CP</title>
+---
+layout: default
+---
 
-	<!-- Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="../css/jmlr.css" />
+<div id="content" class="home">
 
-	<!-- Fixed position navigation -->
-	<!--#include virtual="/proceedings/css-scroll.txt"-->
+  <h1>Proceedings of Machine Learning Research</h1>
+  <h2>Volume {{ site.volume }}: {{ site.conference.name }}, {{ site.conference.dates.first | date: "%B %-d" }} to {{ site.conference.dates.last | date: "%B %-d, %Y" }}, {{ site.conference.location }}</h2>
+  {% if site.github.edit %}
+  <p align="right">[<a href="https://github.com/{{ site.github_username }}/{% if site.github.repository %}{{ site.github.repository }}{% else %}{{ site.baseurl }}{% endif %}/edit/{% if site.github.repository contains 'github.io' %}master{% else %}gh-pages{% endif %}/_config.yml">edit</a>]</p>
+  {% endif %}
 
-	<!-- MathJax -->
-	<script type="text/x-mathjax-config">
-	MathJax.Hub.Config({tex2jax: {inlineMath: [['\\(','\\)']]}});
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  
+  <p><strong>Editors:
+      {% assign lastone = site.editor | last %}
+      {% for person in site.editor %}
+      {% include listperson.html %}
+      {% endfor %}
+  </strong></p>
+  <p>[<a href="./bibliography.bib">bib</a>][<a href="./citeproc.yaml">citeproc</a>]</p>
+  <div id="sectionnav">
+    {% if site.sections %}
+    <p>Contents:</p>
+    <ul>
+      {% for section in site.sections %}
+      <li><a href="#{{ section.name }}">{{ section.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <label for="search-authors">Filter Authors:</label>
+    <input type="search" name="filter-authors" id="search-authors" value />
+    <label for="search-titles">Filter Titles:</label>
+    <input type="search" name="filter-titles" id="search-titles" value />
+  </div>
+  {% if site.sections %}
+  {% for section in site.sections %}
+  <h3 id="{{ section.name }}">{{ section.title }}</h3>
+  {% assign sorted = (site.posts | sort: 'firstpage') %}
+  {% for post in sorted %}
+    {% if section.name == post.section %}
+    {% include listpaper.html %}
+    {% endif %}
+    {% endfor %}
+  </dl>
+  {% endfor %}
+  {% endif %}
+  <dl>
+  {% assign sorted = (site.posts | sort: 'firstpage') %}
+  {% for post in sorted %}
+  {% unless post.section %} 
+  {% include listpaper.html %}
+  {% endunless %}
+  {% endfor %}
 
-
-</head>
-<body>
-
-<div id="fixed">
-<!--#include virtual="/proceedings/nav-bar.txt"-->
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  
 </div>
-
-<div id="content">
-	<h1>JMLR Workshop and Conference Proceedings</h1>
-	<h2>Volume 56: Proceedings of the 1st Machine Learning for Healthcare Conference</h2>
-
-	<p><strong>Editors: 
-	
-		Finale Doshi-Velez,
-	
-		Jim Fackler,
-	
-		David Kale,
-	
-		Byron Wallace,
-	
-		Jenna Wiens
-    </strong>
-	
-	</p>
-
-	
-
-	<div id="sectionnav">
-		<p>Contents:</p>
-		<ul>
-		
-			<li><a href="#default">Accepted Papers</a></li>
-		
-		</ul>
-
-		<label for="search-authors">Filter Authors:</label>
-		<input type="search" name="filter-authors" id="search-authors" value />
-		<label for="search-titles">Filter Titles:</label>
-		<input type="search" name="filter-titles" id="search-titles" value />
-	</div>
-
-	
-	<h3 id="default">Accepted Papers</h3>
-
-	<dl>
-		
-			<div class="paper">
-	<p class="title">Input-Output Non-Linear Dynamical Systems applied to Physiological Condition Monitoring</p>
-	<p class="details">
-	<span class="authors">
-		
-			Konstantinos Georgatzis,
-		
-			Chris Williams,
-		
-			Christopher Hawthorne
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Georgatzis16.html">abs</a>]
-		[<a href="Georgatzis16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Identifiable Phenotyping using Constrained Non-Negative Matrix Factorization</p>
-	<p class="details">
-	<span class="authors">
-		
-			Shalmali Joshi,
-		
-			Suriya Gunasekar,
-		
-			David Sontag,
-		
-			Ghosh Joydeep
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Joshi16.html">abs</a>]
-		[<a href="Joshi16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Predicting Disease Progression with a Model for Multivariate Longitudinal Clinical Data</p>
-	<p class="details">
-	<span class="authors">
-		
-			Joseph Futoma,
-		
-			Mark Sendak,
-		
-			Blake Cameron,
-		
-			Katherine Heller
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Futoma16.html">abs</a>]
-		[<a href="Futoma16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Using Kernel Methods and Model Selection for Prediction of Preterm Birth</p>
-	<p class="details">
-	<span class="authors">
-		
-			Ilia Vovsha,
-		
-			Ansaf Salleb-Aouissi,
-		
-			Anita Raja,
-		
-			Thomas Koch,
-		
-			Alex Rybchuk,
-		
-			Axinia Radeva,
-		
-			Ashwath Rajan,
-		
-			Yiwen, Huang,
-		
-			Hatim Diab,
-		
-			Ashish Tomar,
-		
-			Ronald Wapner
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Vovsha16.html">abs</a>]
-		[<a href="Vovsha16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Multi-task Prediction of Disease Onsets from Longitudinal Laboratory Tests</p>
-	<p class="details">
-	<span class="authors">
-		
-			Narges Razavian,
-		
-			Jake Marcus,
-		
-			David Sontag
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Razavian16.html">abs</a>]
-		[<a href="Razavian16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Deep Survival Analysis</p>
-	<p class="details">
-	<span class="authors">
-		
-			Rajesh Ranganath,
-		
-			Adler Perotte,
-		
-			Noémie Elhadad,
-		
-			,David Blei
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Ranganath16.html">abs</a>]
-		[<a href="Ranganath16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Multi-task Learning with Weak Class Labels: Leveraging iEEG to Detect Cortical Lesions in Cryptogenic Epilepsy</p>
-	<p class="details">
-	<span class="authors">
-		
-			Bilal Ahmed,
-		
-			Thomas Thesen,
-		
-			Karen Blackmon,
-		
-			Ruben Kuzniecky,
-		
-			Orrin Devinsky,
-		
-			Jennifer Dy,
-		
-			Carla Brodley
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Ahmed16.html">abs</a>]
-		[<a href="Ahmed16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">gLOP: the global and Local Penalty for Capturing Predictive Heterogeneity</p>
-	<p class="details">
-	<span class="authors">
-		
-			Rhiannon Rose,
-		
-			Daniel Lizotte
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Rose16.html">abs</a>]
-		[<a href="Rose16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Transferring Knowledge from Text to Predict Disease Onset</p>
-	<p class="details">
-	<span class="authors">
-		
-			Yun Liu,
-		
-			Collin Stultz,
-		
-			John Guttag,
-		
-			Kun-Ta Chuang,
-		
-			Kun-Ta Chuang,
-		
-			Fu-Wen Liang,
-		
-			Huey-Jen Su
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Liu16.html">abs</a>]
-		[<a href="Liu16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Preterm Birth Prediction: Stable Selection of Interpretable Rules from High Dimensional Data</p>
-	<p class="details">
-	<span class="authors">
-		
-			Truyen Tran,
-		
-			Wei Luo,
-		
-			Dinh Phung,
-		
-			Jonathan Morris,
-		
-			Kristen Rickard,
-		
-			Svetha Venkatesh
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Tran16.html">abs</a>]
-		[<a href="Tran16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Learning Robust Features using Deep Learning for Automatic Seizure Detection</p>
-	<p class="details">
-	<span class="authors">
-		
-			Pierre Thodoroff,
-		
-			Joelle Pineau,
-		
-			Andrew Lim
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Thodoroff16.html">abs</a>]
-		[<a href="Thodoroff16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Mitochondria-based Renal Cell Carcinoma Subtyping: Learning from Deep vs. Flat Feature Representations</p>
-	<p class="details">
-	<span class="authors">
-		
-			Peter J. Schüffler,
-		
-			Judy Sarungbam,
-		
-			Hassan Muhammad,
-		
-			Ed Reznik,
-		
-			Satish Tickoo,
-		
-			Thomas Fuchs
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Schuffler16.html">abs</a>]
-		[<a href="Schuffler16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Clinical Tagging with Joint Probabilistic Models</p>
-	<p class="details">
-	<span class="authors">
-		
-			Yoni Halpern,
-		
-			Steven Horng,
-		
-			David Sontag
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Halpern16.html">abs</a>]
-		[<a href="Halpern16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Diagnostic Prediction Using Discomfort Drawings with IBTM</p>
-	<p class="details">
-	<span class="authors">
-		
-			Cheng Zhang,
-		
-			Hedvig Kjellström,
-		
-			Carl Henrik Ek,
-		
-			Bo Bertilson
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Zhang16.html">abs</a>]
-		[<a href="Zhang16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Uncovering Voice Misuse Using Symbolic Mismatch</p>
-	<p class="details">
-	<span class="authors">
-		
-			Marzyeh Ghassemi,
-		
-			Zeeshan Syed,
-		
-			Daryush Mehta,
-		
-			Jarrad Van Stan,
-		
-			Robert Hillman,
-		
-			John Guttag
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Ghassemi16.html">abs</a>]
-		[<a href="Ghassemi16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Directly Modeling Missing Data in Sequences with RNNs: Improved Classification of Clinical Time Series</p>
-	<p class="details">
-	<span class="authors">
-		
-			Zachary C Lipton,
-		
-			David Kale,
-		
-			Randall Wetzel
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Lipton16.html">abs</a>]
-		[<a href="Lipton16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Deep Convolutional Neural Networks for Microscopy-Based Point of Care Diagnostics</p>
-	<p class="details">
-	<span class="authors">
-		
-			John A Quinn,
-		
-			Rose Nakasi,
-		
-			Pius K. B. Mugagga,
-		
-			Patrick Byanyima,
-		
-			William Lubega,
-		
-			Alfred Andama
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Quinn16.html">abs</a>]
-		[<a href="Quinn16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">A Non-parametric Bayesian Approach for Estimating Treatment-Response Curves from Sparse Time Series</p>
-	<p class="details">
-	<span class="authors">
-		
-			Yanbo Xu,
-		
-			Yanxun Xu,
-		
-			Suchi Saria
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Xu16.html">abs</a>]
-		[<a href="Xu16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-			<div class="paper">
-	<p class="title">Doctor AI: Predicting Clinical Events via Recurrent Neural Networks</p>
-	<p class="details">
-	<span class="authors">
-		
-			Edward Choi,
-		
-			Mohammad Taha Bahadori,
-		
-			Andy Schuetz,
-		
-			Walter F. Stewart,
-		
-			Jimeng Sun
-	</span>
-	</p>
-	<p class="links">
-		[<a href="Choi16.html">abs</a>]
-		[<a href="Choi16.pdf">pdf</a>]
-		
-		
-	</p>
-</div>
-
-		
-	</dl>
-	
-
-</div> <!-- content -->
-	<!-- Search Widget -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	<script src="../js/search.js"></script>
-</body>
-</html>
+<!-- Search Widget -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="../js/search.js"></script>
