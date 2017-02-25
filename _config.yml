@@ -41,6 +41,7 @@ description: |
   Series Editors:
     Neil D. Lawrence
     Mark Reid
+date_str: 18--19 Aug
 url: http://proceedings.mlr.press
 baseurl: "/v56"
 twitter_username: mlresearch
@@ -50,6 +51,7 @@ permalink: "/:title.html"
 github:
   edit: true
   repository: v56
+bibtex_copy: true
 email: ''
 conference:
   name: Machine Learning for Healthcare Conference
