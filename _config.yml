@@ -11,6 +11,8 @@ series: Proceedings of Machine Learning Research
 id: MLHC-2016
 month: 0
 abstract: ''
+tex_title: 
+title: Proceedings of Machine Learning Research
 sections: 
 editor:
 - given: Finale
@@ -23,7 +25,6 @@ editor:
   family: Wallace
 - given: Jenna
   family: Weins
-title: Proceedings of Machine Learning Research
 description: |
   Proceedings of the 1st Machine Learning for Healthcare Conference
     Held in Northeastern University, Boston, MA, USA on 18-19 August 2016
