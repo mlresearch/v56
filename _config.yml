@@ -64,6 +64,7 @@ conference:
   dates:
   - 2016-08-18
   - 2016-08-19
+  number: 1
 analytics:
   google:
     tracking_id: UA-92432422-1
