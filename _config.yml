@@ -21,11 +21,11 @@ editor:
 - given: Byron
   family: Wallace
 - given: Jenna
-  family: Weins
+  family: Wiens
 title: Proceedings of Machine Learning Research
 description: |
   Proceedings of the 1st Machine Learning for Healthcare Conference
-    Held in Northeastern University, Boston, MA, USA on 18-19 August 2016
+    Held at Children's Hospital LA, Los Angeles, CA, USA on 19-20 August 2016
 
   Published as Volume 56 by the Proceedings of Machine Learning Research on 10 December 2016.
 
@@ -34,7 +34,7 @@ description: |
     Jim Fackler
     David Kale
     Byron Wallace
-    Jenna Weins
+    Jenna Wiens
 
   Series Editors:
     Neil D. Lawrence
@@ -59,11 +59,11 @@ display:
 email: ''
 conference:
   name: Machine Learning for Healthcare Conference
-  url: http://mucmd.org/conference-2016.html
-  location: Northeastern University, Boston, MA, USA
+  url: https://www.mlforhc.org/
+  location: Children's Hospital LA, Los Angeles, CA, USA
   dates:
-  - 2016-08-18
   - 2016-08-19
+  - 2016-08-20
   number: 1
 analytics:
   google:
